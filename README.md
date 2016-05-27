@@ -24,6 +24,7 @@ Dpl supports the following providers:
 * [Elastic Beanstalk](#elastic-beanstalk)
 * [Engine Yard](#engine-yard)
 * [Firebase](#firebase)
+* [Flood IO](#flood-io)
 * [Github Releases](#github-releases)
 * [Google App Engine (experimental)](#google-app-engine)
 * [Google Cloud Storage](#google-cloud-storage)
@@ -818,17 +819,30 @@ In order to use this provider, please make sure you have the [App Engine Admin A
 #### Examples:
 
     dpl --provider=firebase --token=<token> --project=<project>
-    
 
+### Flood IO:
+
+Flood IO is a load testing service for generating any amount of load, using open source tools
+like JMeter, Gatling, and Selenium.
+
+#### Options:
+
+* **flood_id**: The ID of an existing Flood to repeat after this build deploys (e.g. The UUID or numeric ID from the Flood dashboard).
+* **grid**: __(optional)__ use a specific grid UUID to launch the test in instead of a region.
+* **region**: __(optional)__ target region to launch the test in.
+
+#### Examples:
+
+    dpl --provider=flood --flood_id=<flood-id>
 
 ### Surge.sh
 
 #### Options:
 
 * **project** Path to project folder relative to repo root. Defaults to repo root if not set.
-* **domain** Domain to publish to. Can be omitted if domain is set in the `CNAME` file in the project folder. 
+* **domain** Domain to publish to. Can be omitted if domain is set in the `CNAME` file in the project folder.
 
- 
+
 #### Environment variables:
 
 * **SURGE_LOGIN**: Set it to the email address you use with Surge
@@ -836,4 +850,4 @@ In order to use this provider, please make sure you have the [App Engine Admin A
 
 #### Example:
     dpl --provider=surge --project=<project-path> --domain=<domain-name>
-    
+
