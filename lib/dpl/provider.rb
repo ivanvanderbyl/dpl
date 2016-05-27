@@ -23,6 +23,7 @@ module DPL
     autoload :ElasticBeanstalk, 'dpl/provider/elastic_beanstalk'
     autoload :EngineYard,       'dpl/provider/engine_yard'
     autoload :Firebase,         'dpl/provider/firebase'
+    autoload :Flood,            'dpl/provider/flood'
     autoload :GAE,              'dpl/provider/gae'
     autoload :GCS,              'dpl/provider/gcs'
     autoload :Hackage,          'dpl/provider/hackage'
